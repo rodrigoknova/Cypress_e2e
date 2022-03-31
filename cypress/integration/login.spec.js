@@ -9,7 +9,7 @@ context('Funcionalidade Login', () => {
     });
 
     beforeEach(() => {
-        cy.visit('minha-conta')
+        cy.visit('/minha-conta/')
     });
 
     afterEach(() => {
@@ -21,7 +21,7 @@ context('Funcionalidade Login', () => {
         cy.get('.page-title').should('contain', 'Minha conta')
     });
 
-    it('Login usando fixture', () => {
+    it.only('Login usando fixture', () => {
         cy.fixture('perfil').then((dados) => {
             cy.login(dados.usuario, dados.senha)
         })
