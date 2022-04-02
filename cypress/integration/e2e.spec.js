@@ -21,7 +21,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.addProdutos('Argus All-Weather Tank', 'S', 'Gray', 3)
         cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Green', 5)
         cy.addProdutos('Abominable Hoodie', 'XS', 'Green', 2)
-        cy.addProdutos('Apollo Running Short', '32', 'Black', 1)
+        cy.addProdutos('Apollo Running Short', '34', 'Black', 1)
         
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', '11')
         cy.get('.woocommerce-message > .button').click()
@@ -43,9 +43,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
         cy.get('#terms').click()
         cy.get('#place_order').click({ force: true })
-        cy.wait(7000)
         cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
-        //espero que desta vez esteja tudo certo hehe, mas se tiver algo errado me fala que corrijo!
     });
 });
  
