@@ -8,7 +8,7 @@ import Enderecos from '../support/page_objects/enderecos'
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('/produtos')
 
     });
 
@@ -17,18 +17,12 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it('Adicionando produtos ao carrinho e Checkout', () => {
-        cy.get('#primary-menu > .menu-item-629 > a').click()
+        
         cy.addProdutos('Argus All-Weather Tank', 'S', 'Gray', 3)
-        cy.get('.woocommerce-message').should('contain', 'no seu carrinho')
-        cy.get('#primary-menu > .menu-item-629 > a').click()
         cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Green', 5)
-        cy.get('.woocommerce-message').should('contain', 'no seu carrinho')
-        cy.get('#primary-menu > .menu-item-629 > a').click()
         cy.addProdutos('Abominable Hoodie', 'XS', 'Green', 2)
-        cy.get('.woocommerce-message').should('contain', 'no seu carrinho')
-        cy.get('#primary-menu > .menu-item-629 > a').click()
         cy.addProdutos('Apollo Running Short', '32', 'Black', 1)
-        cy.get('.woocommerce-message').should('contain', 'no seu carrinho')
+        
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', '11')
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
