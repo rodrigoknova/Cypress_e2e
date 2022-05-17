@@ -19,8 +19,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     it('Adicionando produtos ao carrinho e Checkout', () => {
         
         cy.addProdutos('Argus All-Weather Tank', 'S', 'Gray', 3)
-        cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Green', 5)
-        cy.addProdutos('Abominable Hoodie', 'XS', 'Green', 2)
+        cy.addProdutos('Atlas Fitness Tank', 'XS', 'Blue', 5)
+        cy.addProdutos('Abominable Hoodie', 'XS', 'Red', 2)
         cy.addProdutos('Apollo Running Short', '34', 'Black', 1)
         
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', '11')
